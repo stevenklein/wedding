@@ -1,0 +1,240 @@
+
+
+/************** LINKS **************/
+
+a {
+  color: $link_color;
+  text-decoration: none;
+  &.small {
+    font-size:.875rem;
+  }
+  &:hover {
+    color: $blue-dark;
+    text-decoration: none;
+  }
+  &:focus {
+    outline:none;
+  }
+  &.grey{
+    color:$grey-text;
+  }
+  &.light-grey {
+    color:$light-grey-text;
+  }
+}
+
+
+
+/************** PARAGRAPHS **************/
+
+p {
+  margin-bottom:.65rem;
+}
+
+p.blockquote {
+  font-style:italic;
+  border-left:5px solid $turquoise;
+  padding-left:1.25rem;
+  &.right-align {
+    border-left:none;
+    padding-left:0px;
+    border-right:5px solid $turquoise;
+    padding-right:1.25rem;
+  }
+  .attribution {
+    font-weight:500;
+    font-style:regular;
+    display:inline-block;
+    margin-top:.5rem;
+  }
+}
+
+
+
+/************** HEADERS **************/
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight:500;
+  small {
+    color:$grey-text;
+    display:inline-block;
+    font-weight:400;
+  }
+}
+
+h1 {
+  @include font-size(3);
+  margin-bottom:.8rem;
+  small {
+    @include font-size(2);
+    position:relative;
+    top:-.4rem;
+  }
+}
+
+h2 {
+  @include font-size(2.6);
+  margin-bottom:.7rem;
+  small {
+    @include font-size(1.75);
+    position:relative;
+    top:-.35rem;
+  }
+}
+
+h3 {
+  @include font-size(2.2);
+  margin-bottom:.6rem;
+  small {
+    @include font-size(1.5);
+    position:relative;
+    top:-.3rem;
+  }
+}
+
+h4 {
+  @include font-size(1.8);
+  margin-bottom:.5rem;
+  small {
+    @include font-size(1.25);
+    position:relative;
+    top:-.2rem;
+  }
+}
+
+h5 {
+  @include font-size(1.4);
+  margin-bottom:.4rem;
+  small {
+    @include font-size(1);
+    position:relative;
+    top:-.2rem;
+  }
+}
+
+h6 {
+  @include font-size(1);
+  margin-bottom:.3rem;
+  small {
+    @include font-size(.8);
+    position:relative;
+    top:-.2rem;
+  }
+}
+
+
+
+
+/************** LISTS **************/
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+ul.styled, ol.styled {
+  margin-bottom:10px;
+  margin-left:23px;
+}
+ul.styled {
+  list-style: disc;
+}
+ol.styled {
+  list-style: decimal;
+}
+
+
+/************** DEFINITIONS **************/
+dl {
+  margin-bottom: 18px;
+}
+dt, dd {
+  line-height: 18px;
+}
+dt {
+  font-weight:700;
+}
+dd {
+  margin-left: 9px;
+}
+hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}
+strong {
+  font-weight:700;
+}
+em {
+  font-style: italic;
+}
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+
+address {
+  display: block;
+  margin-bottom: 18px;
+  line-height: 18px;
+  font-style: normal;
+}
+small {
+  @include font-size(.875);
+  color:$light-grey-text;
+}
+cite {
+  font-style: normal;
+}
+
+sub {
+  vertical-align:sub;
+}
+
+sup {
+  vertical-align:super;
+}
+
+/************** CODE **************/
+
+code {
+  @include font-size(.75);
+  padding: 3px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+.markdown-display pre, pre.code-display {
+  @include border-radius(4px);
+  @include font-size(.75);
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  background-color: #f5f5f5;
+  border: 1px solid #E1E1E1;
+  padding:.5rem;
+  white-space: pre-wrap;
+  &.linenums {
+    @include box-shadow((40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset));
+  }
+  code {
+    padding:0px;
+    color:inherit;
+    background-color:transparent;
+    border:none;
+  }
+  ol {
+    list-style-type: decimal;
+    li {
+      margin: .2rem 0 .2rem 1.8rem;
+      padding-left: 1rem;
+    }
+  }
+}

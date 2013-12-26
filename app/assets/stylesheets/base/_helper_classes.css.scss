@@ -1,0 +1,75 @@
+.clearfix {
+  @include clearfix();
+}
+
+.container {
+  width:$front-facing-page-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.full-width {
+  width:100% !important;
+}
+.align-right {
+  text-align:right;
+}
+.align-left {
+  text-align:left;
+}
+.align-center {
+  text-align:center;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.invisible {
+  visibility: hidden;
+}
+.fade {
+  @include transition(opacity 0.15s ease);
+  opacity: 0;
+}
+.fade.in {
+  opacity: 1;
+}
+.collapse {
+  @include transition(height 0.35s ease);
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+.collapse.in {
+  height: auto;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.caret {
+  @include opacity(.3);
+  display: inline-block;
+  width: 0;
+  height: 0;
+  text-indent: -99999px;
+  *text-indent: 0;
+  vertical-align: top;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000000;
+  content: "\2193";
+  &.link {
+    @include opacity(1);
+    border-top-color:$link-color;
+  }
+}

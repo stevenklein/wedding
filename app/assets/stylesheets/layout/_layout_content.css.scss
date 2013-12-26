@@ -1,0 +1,51 @@
+.layout-content {
+  .hero {
+    position:relative;
+    .img {
+      @include opacity(0);
+      @include transition(opacity .5s ease-in-out);
+      position:absolute;
+      background-size:cover;
+      z-index:10;
+      top:0px;
+      left:0px;
+      right:0px;
+      bottom:0px;
+      &.active {
+        @include opacity(1);
+      }
+      &.img-1 {
+        background-image: image-url('pic-1-dark.png');
+      }
+      &.img-2 {
+        background-image: image-url('pic-2-dark.png');
+      }
+      &.img-3 {
+        background-image: image-url('pic-3-dark.png');
+      }
+      &.img-4 {
+        background-image: image-url('pic-4-dark.png');
+      }
+      &.img-5 {
+        background-image: image-url('pic-5-dark.png');
+      }
+      &.img-6 {
+        background-image: image-url('pic-6-dark.png');
+      }
+      &.img-7 {
+        background-image: image-url('pic-7-dark.png');
+      }
+      &.img-8 {
+        background-image: image-url('pic-8-dark.png');
+      }
+    }
+    .container {
+      position:relative;
+      z-index:11;
+      text-align:center;
+      color:#fff;
+      font-size:4rem;
+      font-weight:300;
+    }
+  }
+}

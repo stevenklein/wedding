@@ -1,0 +1,27 @@
+/* Typography Constants */
+$font-stack-a: "proxima-nova", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+$font-icon: "Pictos Custom";
+$font-size: 16;
+$line-height: #{($font-size * 1.5)}px;
+$font-color: #333;
+$link-color: $blue;
+$grey-text: #888;
+$light-grey-text: #afafaf;
+$dark-grey-text: #666;
+$body-background: #f9f9f7;
+
+$beige-text: #45494d;
+$beige-border:#ebe8e4;
+
+/* Form Constants */
+$input-border-color:#bbbbbb;
+$input-height:40px;
+$input-border-radius:3px;
+
+/* Layout - Front Facing */
+$front-facing-page-width: 75rem;
+
+/* Layout - Grid */
+$column-width: 4.3333333%;
+$gutter-width: 4%;
+$row-margin-bottom:2rem;

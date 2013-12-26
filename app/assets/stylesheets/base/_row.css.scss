@@ -1,0 +1,151 @@
+.row {
+  margin-left:-$gutter-width;
+  &:last-of-type {
+    margin-bottom:0px;
+  }
+  
+  & > .span12 {
+    @include columnStyle(12);
+  }
+  & > .span11 {
+    @include columnStyle(11);
+  }
+  & > .span10 {
+    @include columnStyle(10);
+  }
+  & > .span9 {
+    @include columnStyle(9);
+  }
+  & > .span8 {
+    @include columnStyle(8);
+  }
+  & > .span7 {
+    @include columnStyle(7);
+  }
+  & > .span6 {
+    @include columnStyle(6);
+  }
+  & > .span5 {
+    @include columnStyle(5);
+  }
+  & > .span4 {
+    @include columnStyle(4);
+  }
+  & > .span3 {
+    @include columnStyle(3);
+  }
+  & > .span2 {
+    @include columnStyle(2);
+  }
+  & > .span1 {
+    @include columnStyle(1);
+  }
+
+  & > [class*="span"] {
+    float: left;
+    margin-left: $gutter-width;
+    
+    &.offset11 {
+      margin-left: ($column-width * 11) + ($gutter-width * 12) !important;
+    }
+    &.offset10 {
+      margin-left: ($column-width * 10) + ($gutter-width * 11) !important;
+    }
+    &.offset9 {
+      margin-left: ($column-width * 9) + ($gutter-width * 10) !important;
+    }
+    &.offset8 {
+      margin-left: ($column-width * 8) + ($gutter-width * 9) !important;
+    }
+    &.offset7 {
+      margin-left: ($column-width * 7) + ($gutter-width * 8) !important;
+    }
+    &.offset6 {
+      margin-left: ($column-width * 6) + ($gutter-width * 7) !important;
+    }
+    &.offset5 {
+      margin-left: ($column-width * 5) + ($gutter-width * 6) !important;
+    }
+    &.offset4 {
+      margin-left: ($column-width * 4) + ($gutter-width * 5) !important;
+    }
+    &.offset3 {
+      margin-left: ($column-width * 3) + ($gutter-width * 4) !important;
+    }
+    &.offset2 {
+      margin-left: ($column-width * 2) + ($gutter-width * 3) !important;
+    }
+    &.offset1 {
+      margin-left: ($column-width * 1) + ($gutter-width * 2) !important;
+    }
+  }
+
+  &.collapsible {
+    & > .span6 {
+      @media screen and (max-width: 560px) {
+        @include columnStyle(12);
+        margin-bottom:$row-margin-bottom;
+        &:last-of-type {
+          margin-bottom:0px;
+        }
+      }
+    }
+    & > .span4 {
+      @media screen and (max-width: 1024px) {
+        @include columnStyle(12);
+        margin-bottom:$row-margin-bottom;
+        &:last-of-type {
+          margin-bottom:0px;
+        }
+      }
+    }
+    & > .span3 {
+      @media screen and (max-width: 1024px) {
+        @include columnStyle(6);
+        margin-bottom:$row-margin-bottom;
+      }
+      @media screen and (max-width: 560px) {
+        @include columnStyle(12);
+        margin-bottom:$row-margin-bottom;
+        &:last-of-type {
+          margin-bottom:0px;
+        }
+      }
+    }
+    & > .span2 {
+      @media screen and (max-width: 1024px) {
+        @include columnStyle(3);
+      }
+      @media screen and (max-width: 560px) {
+        @include columnStyle(4);
+      }
+      @media screen and (max-width: 320px) {
+        @include columnStyle(6);
+      }
+    }
+    & > .span1 {
+      @media screen and (max-width: 1330px) {
+        @include columnStyle(2);
+      }
+      @media screen and (max-width: 1024px) {
+        @include columnStyle(3);
+      }
+      @media screen and (max-width: 560px) {
+        @include columnStyle(4);
+      }
+      @media screen and (max-width: 320px) {
+        @include columnStyle(6);
+      }
+    }
+  }
+
+  // clearfix
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  // clearfix
+  &:after {
+    clear: both;
+  }
+}

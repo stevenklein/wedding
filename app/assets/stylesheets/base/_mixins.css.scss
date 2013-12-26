@@ -1,0 +1,298 @@
+@mixin border-radius($pixels) {
+  border-radius:#{$pixels};
+  -moz-border-radius:#{$pixels};
+  -webkit-border-radius:#{$pixels};
+  -o-border-radius:#{$pixels};
+  -ms-border-radius:#{$pixels};
+}
+
+@mixin box-shadow($shadow) {
+  box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  -webkit-box-shadow:$shadow;
+  -o-box-shadow:$shadow;
+  -ms-box-shadow:$shadow;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transition-delay($delay) {
+  -webkit-transition-delay: $delay;
+  -moz-transition-delay: $delay;
+  -ms-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  transition-delay: $delay; 
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin background-clip($clip) {
+  -webkit-background-clip: $clip;
+  -moz-background-clip: $clip;
+  background-clip: $clip;
+}
+
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+@mixin animation-play-state($state) {
+  -ms-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+
+@mixin animation-fill-mode($state) {
+  -ms-animation-fill-mode: $state;
+  -moz-animation-fill-mode: $state;
+  -webkit-animation-fill-mode: $state;
+  animation-fill-mode: $state;
+}
+
+@mixin animation-delay($delay) {
+  -ms-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin animation-name($name) {
+  -ms-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin opacity($opacity) {
+  filter: alpha(opacity=$opacity);
+  -moz-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin linear-gradient($top,$bottom) {
+  background-color: ($top / 2) + ($bottom / 2);
+  background-repeat: repeat-x;
+  background-image: linear-gradient(top, $top, $bottom);
+  background-image: -moz-linear-gradient(top, $top, $bottom);
+  background-image: -ms-linear-gradient(top, $top, $bottom);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom));
+  background-image: -webkit-linear-gradient(top, $top, $bottom);
+  background-image: -o-linear-gradient(top, $top, $bottom);
+}
+
+@mixin hover-gradient($top,$bottom, $onHover:true) {
+  @include linear-gradient($top,$bottom);
+  @if ($onHover == true) {
+    &:hover {
+      @include linear-gradient($top + rgb(10,10,10), $bottom + rgb(10,10,10));
+    }
+  }
+  @if ($onHover == darker) {
+    &:hover {
+      @include linear-gradient($top - rgb(10,10,10), $bottom - rgb(10,10,10));
+    }  
+  }
+}
+
+@mixin complex-gradient($gradient, $fallback) {
+  background-color: $fallback;
+  background-repeat: repeat-x;
+  background-image: linear-gradient($gradient);
+  background-image: -moz-linear-gradient($gradient);
+  background-image: -ms-linear-gradient($gradient);
+  background-image: -webkit-linear-gradient($gradient);
+  background-image: -o-linear-gradient($gradient);
+}
+
+@mixin radial-gradient($gradient) {
+  background-image: radial-gradient($gradient);
+  background-image: -moz-radial-gradient($gradient);
+  background-image: -webkit-radial-gradient($gradient);
+  background-image: -ms-radial-gradient($gradient);
+  background-image: -o-radial-gradient($gradient);
+}
+
+
+@mixin triple-border($top,$sides,$bottom) {
+  border-width:1px;
+  border-style:solid;
+  border-color:$top $sides $bottom;
+}
+
+@mixin box-sizing($string) {
+  -moz-box-sizing:$string;
+  -webkit-box-sizing:$string;
+  box-sizing:$string;
+}
+
+@mixin ellipsis() {
+  vertical-align:middle;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+@mixin columnStyle($column) {
+  margin-left:$gutter-width;
+  float:left;
+  @if $column == 12 {
+    width: ($column-width * 12) + ($gutter-width * 11); 
+  }
+  @if $column == 11 {
+    width: ($column-width * 11) + ($gutter-width * 10);
+  }
+  @if $column == 10 {
+    width: ($column-width * 10) + ($gutter-width * 9);
+  }
+  @if $column == 9 {
+    width: ($column-width * 9) + ($gutter-width * 8);
+  }
+  @if $column == 8 {
+    width: ($column-width * 8) + ($gutter-width * 7);
+  }
+  @if $column == 7 {
+    width: ($column-width * 7) + ($gutter-width * 6);
+  }
+  @if $column == 6 {
+    width: ($column-width * 6) + ($gutter-width * 5);
+  }
+  @if $column == 5 {
+    width: ($column-width * 5) + ($gutter-width * 4); 
+  }
+  @if $column == 4 {
+    width: ($column-width * 4) + ($gutter-width * 3);
+  }
+  @if $column == 3 {
+    width: ($column-width * 3) + ($gutter-width * 2); 
+  }
+  @if $column == 2 {
+    width: ($column-width * 2) + ($gutter-width * 1);
+  }
+  @if $column == 1 {
+    width: ($column-width * 1) + ($gutter-width * 0);
+  }
+}
+
+
+@mixin px-to-rem($attribute, $value) {
+  #{$attribute}: #{$value/$font-size}rem;
+}
+
+@mixin rem-to-px($attribute, $value) {
+  #{$attribute}: #{$value * $font-size}px;
+}
+
+@mixin font-size($size, $in-px: false) {
+  @if $in-px == true {
+    $ratio: (($size / $font-size) - 1);
+    $portion: $size / 5;
+    $subtract: $ratio * $portion;
+    font-size:#{$size}px; // ie8 doesn't support rem
+    line-height: #{(($size * 1.5) - $subtract)}px; // ie8 doesn't support rem
+    @include px-to-rem(font-size, $size);
+    @include px-to-rem(line-height, (($size * 1.5) - $subtract));
+  }
+
+  @if $in-px != true {
+    $ratio: ($size - 1);
+    $portion: $size / 5;
+    $subtract: $ratio * $portion;
+    @include rem-to-px(font-size, $size); // ie8 doesn't support rem
+    @include rem-to-px(line-height, (($size * 1.5) - $subtract)); // ie8 doesn't support rem
+    font-size: #{$size}rem;
+    line-height: #{(($size * 1.5) - $subtract)}rem;
+  }
+}
+
+@mixin removeChildMB() {
+  h1,h2,h3,h4,h5,h6,p {
+    margin-bottom:0;
+  }
+}
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  } 
+  &:after {
+    clear: both;
+  }
+  clear:both;
+  zoom: 1;
+}
+
+@mixin uncontainer() {
+  width:auto;
+  margin:0;
+}
+
+@mixin cpt-button-size($multiplier) {
+  @include border-radius($cpt-button-border-radius * $multiplier);
+  @include font-size($cpt-button-font-size * $multiplier);
+  padding: 0 ($cpt-button-horizontal-padding * $multiplier);
+  height: ($cpt-button-height * $multiplier);
+  line-height: ($cpt-button-line-height * $multiplier);
+}
+
+@mixin unbutton() {
+  @include border-radius(0px);
+  @include box-shadow(none);
+  font-weight:400;
+  @include font-size(.875);
+  color:$link-color !important;
+  &:hover {
+    color:darken($link-color, 10%) !important;
+  }
+  display:inline;
+  padding:0px;
+  background:none;
+  border:none;
+  height:auto;
+  text-align:left;
+  vertical-align:top;
+  letter-spacing:0px;
+  text-shadow:none;
+  text-transform:none;
+}
+
+@mixin rowWithMediaQuery($width) {
+  @media screen and (max-width: $width) {
+    
+    // clearfix
+    &:before, &:after {
+      content: "";
+      display: table;
+    }
+    // clearfix
+    &:after {
+      clear: both;
+    }
+    margin-left:-$gutter-width;
+  }
+}

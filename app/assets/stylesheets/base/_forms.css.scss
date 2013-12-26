@@ -1,0 +1,382 @@
+$control-group-spacing: 1.5rem;
+
+/************************ BASIC FOR ELEMENTS STYLING ******************************/
+input::-webkit-input-placeholder {
+    color: #bbb;
+}
+input:-moz-placeholder {
+    color: #bbb;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  margin:0px;
+}
+
+label,input,textarea, button, select {
+  font-family:$font-stack-a;
+  font-size: #{$font-size}px;
+  vertical-align:middle;
+}
+
+.full-width-elements {
+  input[type="text"],input[type="password"],input[type="email"], textarea, select, .chzn-container-single, .chzn-single {
+    width:100%;
+  }
+}
+
+input[type="text"],input[type="password"],input[type="email"], textarea, select, .chzn-container-single .chzn-single {
+  @include border-radius($input-border-radius);
+  display:inline-block;
+  border:1px solid #bbb;
+  padding:1px 10px 0;
+  height:40px;
+  &.small {
+    @include font-size(.875);
+    height:34px;
+  }
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea, .chzn-container-single .chzn-single {
+  color:$dark-grey-text;
+  &:focus {
+    @include box-shadow(0 2px 4px rgba(0,0,0,.06) inset);
+  }
+}
+
+.chzn-container-single .chzn-single {
+  line-height:40px;
+}
+
+input:not([type="submit"]), textarea, select {
+  width: 250px;
+}
+
+input {
+  word-wrap: normal;
+  word-break:normal;
+}
+
+textarea {
+  @include font-size(1);
+  padding:9px;
+  resize: none;
+  height:6rem;
+  &.size-small {
+    height:4rem;
+  }
+  &.size-large {
+    height:8rem;
+  }
+}
+
+select {
+  padding:6px;
+}
+
+label {
+  display:block;
+  font-weight:500;
+  &.required {
+    font-weight:500;
+    &:after {
+      content:"*";
+    }
+  }
+}
+
+input[type="checkbox"], input[type="radio"] {
+  @include border-radius(0);
+  width: auto;
+  height: auto;
+  padding: 0;
+  position:relative;
+  line-height: normal;
+  border: 0;
+  cursor: pointer;
+}
+
+input[type="hidden"] {
+  display: none;
+}
+
+input[disabled], select[disabled], textarea[disabled], select[readonly] {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: not-allowed;
+  &:hover {
+    border-color:#ddd;
+  }
+}
+
+
+
+
+
+/************************ HOVER/FOCUS STATES ******************************/
+input[type="text"],input[type="password"],input[type="email"], textarea {
+  &:hover {
+    border:1px solid #b0b0b0;
+  }
+  &:focus {
+    border:1px solid #a0a0a0;
+    outline:none;
+  }
+}
+
+
+
+
+
+/************************ INVALID STATES ******************************/
+.control-group.invalid > label, .control-group.invalid .help-block, .control-group.invalid .help-inline {
+  color: $red;
+}
+.control-group.invalid input, .control-group.invalid .select, .control-group.invalid textarea {
+  color: $red;
+  border-color: $red;
+}
+
+
+
+
+
+/************************ HELP BLOCKS AND HELP INLINES ******************************/
+.help-block {
+  @include font-size(.75);
+  margin-top:.25rem;
+  margin-bottom: 0;
+  color: #aaa;
+  display:block
+}
+.help-inline {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  margin-bottom: .5rem;
+  vertical-align: middle;
+  padding-left: .25rem;
+  color: #aaa;
+  font-size:.75rem;
+}
+
+
+
+
+
+/************************ INLINE/HORIZONTAL LAYOUT OVERRIDES ******************************/
+.controls.inline {
+  input, textarea, .help-inline {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+input[type="text"] {
+  &.inline {
+    position:relative;
+    top:-2px;
+    margin:0 .25rem;
+  }
+}
+
+
+
+
+
+/************************ INLINE/HORIZONTAL LAYOUT OVERRIDES ******************************/
+.controls.prepend, .controls.append {
+  & > .ilb {
+    display:inline-block;
+    position:relative;
+  }
+  label {
+    @include box-shadow(0 1px 0 white inset);
+    background-color:#f4f4f4;
+    position:absolute;
+    width:$input-height;
+    top:1px;
+    height:$input-height - 2px; // same height as inputs which have a border-top/bottom
+    line-height:$input-height - 2px;
+    text-align:center;
+    color:$dark-grey-text;
+    text-shadow:0 1px 0 white;
+    font-weight:500;
+    &.prepender {
+      @include border-radius($input-border-radius 0 0 $input-border-radius);
+      left:1px;
+      border-right:1px solid #ccc;
+    }
+    &.appender {
+      @include border-radius(0 $input-border-radius $input-border-radius 0);
+      right:1px;
+      border-left:1px solid #ccc;
+    }
+  }
+  input.prepend {
+    padding-left:3rem;
+  }
+  input.append {
+    padding-right:3rem;
+  }
+
+  &.full-width {
+    .ilb, input {
+      width:100%;
+    }
+  }
+}
+
+
+
+
+
+
+/************************ CONTROL GROUP AND form-HORIZONTAL ******************************/
+
+.control-group {
+  margin-bottom: $control-group-spacing;
+  clear: both;
+  &:last-of-type {
+    margin-bottom:0px;
+  }
+  &.has-mb {
+    margin-bottom: $control-group-spacing;
+  }
+  & > label {
+    margin-bottom:.25rem;
+  }
+  &[class*="span"] {
+    clear:none;
+  }
+}
+
+.form-horizontal .control-group > label {
+  float: left;
+  width: 8.75rem;
+  padding-top: .5rem;
+  text-align: right;
+  margin-bottom:0px;
+  &.no-pt {
+    padding-top:0px;
+  }
+  &.two-lines {
+    padding-top:0;
+    position:relative;
+    top:-3px;
+  }
+  @media screen and (max-width: 768px) {
+    float:none;
+    width:auto;
+    padding-top:0px;
+    text-align:left;
+    margin-bottom:.25rem;
+  }
+}
+
+.form-actions {
+  margin-top:$control-group-spacing;
+}
+
+.form-horizontal .controls {
+  margin-left: 10rem;
+  &.no_left_margin {
+    margin-left: 0;
+  }
+  @media screen and (max-width: 768px) {
+    margin-left:0;
+    input[type="text"],input[type="password"],input[type="email"], textarea, select, .chzn-container-single .chzn-single {
+      &:not(.inline) {
+        width:100%;
+      }
+    }
+  }
+}
+.form-horizontal .form-actions {
+  padding-left: 10rem;
+  a {
+    margin-right:.6rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left:0px;
+  }
+}
+
+
+
+
+
+
+/************************  FORM-BORDERED ******************************/
+
+.form-bordered {
+  .control-group {
+    border-bottom:1px solid #e0e0e0;
+    margin-bottom:0px;
+    padding:2rem 0;
+    &.unpad-top {
+      padding-top:0px;
+    }
+    &.last-unborder {
+      border-bottom:none;
+      padding-bottom:0px;
+    }
+    &.first-border {
+      padding-top:2rem;
+      border-top:1px solid #e0e0e0;
+    }
+  }
+}
+
+
+
+
+
+
+
+/************************ FOR RADIO/CHECKBOXES ******************************/
+//  Markup Pattern - Notice the <label class="radio">s. Works similarly for checkboxes.
+//  <div class="control-group">
+//    <label>Download Status</label
+//    <div class="controls">
+//      <label class="radio">
+//        <input type="radio" /> This song is available for download.
+//      </label>
+//      <label class="radio">
+//        <input type="radio" /> This song is NOT available for download.
+//      </label>
+//    </div>
+//  </div>
+
+  .radio, .checkbox {
+    font-weight:400;
+    padding-left: 1.5rem;
+    font-weight:400;
+  }
+
+  .radio input[type="radio"], .checkbox input[type="checkbox"] {
+    float: left;
+    margin-left: -1.4rem;
+  }
+
+  .radio + .radio, .checkbox + .checkbox {
+    padding-top:.25rem;
+  }
+
+  .radio.inline, .checkbox.inline {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline {
+    margin-left: 1.5rem;
+    padding-top:0rem;
+  }

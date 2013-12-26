@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WeddingSite</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render :partial => 'layouts/page_layout/layout_header' %>
+    <%= yield %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  </body>
+</html>
