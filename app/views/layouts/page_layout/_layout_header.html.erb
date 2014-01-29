@@ -1,10 +1,13 @@
-<nav class="layout-header">
+<div class="layout-header">
   <div class="container">
-    <a href="#">Our Story</a>
-    <a href="#">Wedding Party</a>
-    <a href="#">The Big Day</a>
-    <a href="#">Travel And Events</a>
-    <a href="#">Registry</a>
-    <a href="#" class="button">RSVP</a>
+    <%= link_to image_tag('logo-new.png', :class => 'logo').html_safe, root_path, :class => 'logo-container' %>
+    <nav>
+      <a href="#" data-related-section="our-story">Our Story</a>
+      <a href="#" data-related-section="wedding-party">Wedding Party</a>
+      <a href="#" data-related-section="the-big-day">The Big Day</a>
+      <a href="#" data-related-section="travel">Travel And Events</a>
+      <a href="#" data-related-section="registry">Registry</a>
+      <a href="#" class="button">RSVP</a>
+    </nav>
   </div>
-</nav>
+</div>

@@ -53,3 +53,20 @@ $(function() { // add class="in" to hero text
     $('.hero').find('.text').addClass('in');
   }, 500)
 });
+
+
+
+$(function() { // nav scrolls 
+  var headerHeight = $('.layout-header').outerHeight();
+
+  $('.layout-header').find('nav a').on('click', function() {
+    var $this = $(this)
+      , $relatedSection = $('[data-section-name="' + $this.attr('data-related-section') + '"]');
+
+    $('html, body').animate({
+        scrollTop: ($relatedSection.offset().top - headerHeight)
+    }, 500);
+
+    return false; 
+  });
+});
