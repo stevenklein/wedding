@@ -59,7 +59,7 @@ $(function() { // add class="in" to hero text
 $(function() { // nav scrolls 
   var headerHeight = $('.layout-header').outerHeight();
 
-  $('.layout-header').find('nav a').on('click', function() {
+  $('.layout-header').find('a').on('click', function() {
     var $this = $(this)
       , $relatedSection = $('[data-section-name="' + $this.attr('data-related-section') + '"]');
 

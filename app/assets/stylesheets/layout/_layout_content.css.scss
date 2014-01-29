@@ -64,10 +64,11 @@
   .section {
     padding:7rem 0;
     h2 {
+      @include font-size(3);
+      margin-bottom:3rem;
       text-align:center;
       font-family:$font-stack-b;
       font-weight:600;
-      @include font-size(3);
       span {
         display:inline-block;
         &:after, &:before {
@@ -89,60 +90,11 @@
     }
     &.our-story {
       background-color:$champagne;
-      .timeline-container {
-        position:relative;
-        height:1020px;
-        margin-top:4.5rem;
-        .spine-container {
-          @include border-radius(5px);
-          position:absolute;
-          width:.75%;
-          left:49.625%;
-          height:1020px;
-          background-color:$champagne-dark;
-        }
-        .event-container {
-          width:45%;
-          position:absolute;
-          .period {
-            @include border-radius(4px 4px 0 0);
-            @include font-size(1.5);
-            color:#fff;
-            padding:.65rem 1.25rem .5rem;
-            font-weight:500;
-            background-color:$wine;
-          }
-          .body {
-            @include background-clip(padding-box);
-            @include border-radius(0 0 4px 4px);
-            background-color:#fff;
-            border:1px solid rgba(0,0,0,.075);
-            border-top:none;
-            padding:1.25rem;
-            color:#666;
-          }
-          &.left {
-            left:0px;
-          }
-          &.right {
-            right:0px;
-          }
-          &.event-1 {
-            top:0px;
-          }
-          &.event-2 {
-            top:199px;
-          }
-          &.event-3 {
-            top:470px;
-          }
-          &.event-4 {
-            top:621px;
-          }
-          &.event-5 {
-            top:844px;
-          }
-        }
+      .text {
+        @include font-size(1.25);
+        max-width:800px;
+        text-align:justify;
+        margin:0 auto;
       }
     }
     &.wedding-party {
@@ -161,6 +113,7 @@
         }
         .description {
           color:$grey-text;
+          text-align:justify;
         }
       }
     }
