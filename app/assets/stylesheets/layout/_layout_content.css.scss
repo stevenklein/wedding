@@ -1,4 +1,5 @@
 .layout-content {
+  padding-top:71px;
   .hero {
     position:relative;
     .img {
@@ -43,9 +44,125 @@
       position:relative;
       z-index:11;
       text-align:center;
-      color:#fff;
-      font-size:4rem;
-      font-weight:300;
+      .text {
+        @include opacity(0);
+        @include transition(all 1s ease-in-out);
+        font-family:$font-stack-b;
+        font-size:4rem;
+        line-height:5.5rem;
+        color:#fff;
+        position:relative;
+        top:30px;
+        text-shadow: 0 1px 2px rgba(0,0,0,.1);
+        &.in {
+          @include opacity(1);
+          top:0px;
+        }
+      }
+    }
+  }
+  .section {
+    padding:7rem 0;
+    h2 {
+      text-align:center;
+      font-family:$font-stack-b;
+      font-weight:600;
+      @include font-size(3);
+      span {
+        display:inline-block;
+        &:after, &:before {
+          display:inline-block;
+          content:"";
+          width:60px;
+          height:35px;
+          background-size:60px 35px;
+        }
+        &:after {
+          background-image:image-url('leaf-right.png');
+          margin-left:18px;
+        }
+        &:before {
+          background-image:image-url('leaf-left.png');
+          margin-right:24px;
+        }
+      }
+    }
+    &.our-story {
+      background-color:$champagne;
+      .timeline-container {
+        position:relative;
+        height:1020px;
+        margin-top:4.5rem;
+        .spine-container {
+          @include border-radius(5px);
+          position:absolute;
+          width:.75%;
+          left:49.625%;
+          height:1020px;
+          background-color:$champagne-dark;
+        }
+        .event-container {
+          width:45%;
+          position:absolute;
+          .period {
+            @include border-radius(4px 4px 0 0);
+            @include font-size(1.5);
+            color:#fff;
+            padding:.65rem 1.25rem .5rem;
+            font-weight:500;
+            background-color:$wine;
+          }
+          .body {
+            @include background-clip(padding-box);
+            @include border-radius(0 0 4px 4px);
+            background-color:#fff;
+            border:1px solid rgba(0,0,0,.075);
+            border-top:none;
+            padding:1.25rem;
+            color:#666;
+          }
+          &.left {
+            left:0px;
+          }
+          &.right {
+            right:0px;
+          }
+          &.event-1 {
+            top:0px;
+          }
+          &.event-2 {
+            top:199px;
+          }
+          &.event-3 {
+            top:470px;
+          }
+          &.event-4 {
+            top:621px;
+          }
+          &.event-5 {
+            top:844px;
+          }
+        }
+      }
+    }
+    &.wedding-party {
+      .party-member {
+        text-align:center;
+        margin-top:3.5rem;
+        img {
+          @include border-radius(99px);
+          width:30%;
+        }
+        .name {
+          @include font-size(1.125);
+          font-weight:500;
+          margin-bottom:.75rem;
+          margin-top:1.25rem;
+        }
+        .description {
+          color:$grey-text;
+        }
+      }
     }
   }
 }

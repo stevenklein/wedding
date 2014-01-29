@@ -21,6 +21,16 @@
   }
    
   @font-face {
+    font-family: 'handfont';
+    src: url('<%= font_url('HandFont.eot') %>');
+    src: url('<%= font_url('HandFont.eot?#iefix') %>') format('embedded-opentype'),
+         url('<%= font_url('HandFont.woff') %>') format('woff'),
+         url('<%= font_url('HandFont.ttf') %>') format('truetype');
+    font-weight:400;
+    font-style:normal;
+  }
+   
+  @font-face {
     font-family: 'proxima-nova';
     src: url('<%= font_url('ProximaNovaRegularIt.eot') %>');
     src: url('<%= font_url('ProximaNovaRegularIt.eot?#iefix') %>') format('embedded-opentype'),

@@ -86,13 +86,13 @@ i {
 }
  
 @font-face {
-  font-family: 'proxima-nova';
-  src: url('ProximaNovaRegularIt.eot');
-  src: url('ProximaNovaRegularIt.eot?#iefix') format('embedded-opentype'),
-       url('ProximaNovaRegularIt.woff') format('woff'),
-       url('ProximaNovaRegularIt.ttf') format('truetype');
+  font-family: 'handfont';
+  src: url('HandFont.eot');
+  src: url('HandFont.eot?#iefix') format('embedded-opentype'),
+       url('HandFont.woff') format('woff'),
+       url('HandFont.ttf') format('truetype');
   font-weight:400;
-  font-style:italic;
+  font-style:normal;
 }
  
 @font-face {

@@ -9,14 +9,19 @@
 
 $(function() { // makes sure hero is correct height
   var heroHeight = function() {
-    $('.layout-content .hero').css({
-      'height':window.innerHeight + 'px',
-      'line-height':window.innerHeight + 'px',
+
+    var windowHeight = window.innerHeight - 71
+      , textHeight = parseInt($('.hero').find('.text').css('height'));
+
+    $('.hero').css({
+      'height':windowHeight + 'px',
+      'padding-top':((windowHeight - textHeight) / 2) + 'px'
     });
   }
   $(window).on('resize', heroHeight);
   heroHeight();
 });
+
 
 
 $(function() { // rotate between heros
@@ -39,4 +44,12 @@ $(function() { // rotate between heros
   setInterval(function() {
     nextImage()
   }, 5000);
+});
+
+
+
+$(function() { // add class="in" to hero text
+  setTimeout(function() {
+    $('.hero').find('.text').addClass('in');
+  }, 500)
 });
