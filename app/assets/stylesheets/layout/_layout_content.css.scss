@@ -88,14 +88,17 @@
         }
       }
     }
-    &.our-story {
+    .text-block {
+      @include font-size(1.25);
+      max-width:800px;
+      text-align:justify;
+      margin:0 auto;
+    }
+    &.champagne {
       background-color:$champagne;
-      .text {
-        @include font-size(1.25);
-        max-width:800px;
-        text-align:justify;
-        margin:0 auto;
-      }
+    }
+    &.our-story {
+      
     }
     &.wedding-party {
       .party-member {
