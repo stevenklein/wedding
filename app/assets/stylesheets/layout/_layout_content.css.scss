@@ -103,7 +103,7 @@
         margin-top:3.5rem;
         img {
           @include border-radius(99px);
-          width:30%;
+          width:20%;
         }
         .name {
           @include font-size(1.125);
@@ -114,6 +114,8 @@
         .description {
           color:$grey-text;
           text-align:justify;
+          max-width:85%;
+          margin:0 auto;
         }
       }
     }
