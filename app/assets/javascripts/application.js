@@ -59,7 +59,7 @@ $(function() { // add class="in" to hero text
 $(function() { // nav scrolls 
   var headerHeight = $('.layout-header').outerHeight();
 
-  $('.layout-header').find('a').on('click', function() {
+  $('.layout-header').find('[data-related-section]').on('click', function() {
     var $this = $(this)
       , $relatedSection = $('[data-section-name="' + $this.attr('data-related-section') + '"]');
 
@@ -69,4 +69,12 @@ $(function() { // nav scrolls
 
     return false; 
   });
+});
+
+$(function() { // rsvp button
+  $('#rsvp-button').on('click', function() {
+    $('#rsvp-dropdown').addClass('open')
+    return false;
+  })
+
 });
