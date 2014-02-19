@@ -41,17 +41,17 @@
   }
 }
 
-.rsvp-dropdown {
-  @include transition(top .75s ease-in-out);
-  background-color:$wine;
-  position:fixed;
-  top:0px;
-  left:0px;
-  right:0px;
-  padding:1.25rem 0 1.15rem;
-  z-index:99;
-  color:#fff;
-  &.open {
-    top:104px;
+
+.modal-rsvp {
+  .modal-header {
+    h3 {
+      position:relative;
+      top:3px;
+    }
+  }
+  .attending {
+    .checkbox {
+      margin-top:.5rem;
+    }
   }
 }

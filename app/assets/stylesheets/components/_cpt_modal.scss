@@ -1,7 +1,7 @@
 $modal-max-width:560px;
 $modal-large-max-width:760px;
 $modal-max-height:380px;
-$modal-large-max-height:580px;
+$modal-large-max-height:500px;
 $modal-media-query-width: $modal-max-width + 20px;
 $modal-large-media-query-width: $modal-large-max-width + 20px;
 $modal-body-spacing: 5%;
@@ -24,7 +24,7 @@ $modal-body-spacing: 5%;
     @include transition((opacity .3s linear, top .3s ease-out));
     top: -25%;
     &.in {
-      top: 60%;
+      top: 55%;
     }
   }
 

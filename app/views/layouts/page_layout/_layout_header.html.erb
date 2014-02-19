@@ -12,10 +12,10 @@
   </div>
 </div>
 
-<div class="modal hide fade size-large" id="modal-rsvp" style="display: none">
+<div class="modal hide fade size-large modal-rsvp" id="modal-rsvp" style="display: none">
   <div class="modal-header">
     <a href="#" data-dismiss="modal" class="close">×</a>
-    
+    <h3>RSVP To Our Wedding</h3>
   </div>
   <div class="modal-body">
     <div class="row">
@@ -31,7 +31,7 @@
           <input type="text" class="full-width">
         </div>
       </div>
-      <div class="control-group span4">
+      <div class="control-group span4 attending">
         <label>Will You Be Attending?</label>
         <div class="controls">
           <label class="checkbox inline">
@@ -43,8 +43,34 @@
         </div>
       </div>
     </div>
+    <div class="row" id="new-rsvp-template" style="display:none">
+      <div class="control-group span4">
+        <label>First Name</label>
+        <div class="controls">
+          <input type="text" class="full-width">
+        </div>
+      </div>
+      <div class="control-group span4">
+        <label>Last Name</label>
+        <div class="controls">
+          <input type="text" class="full-width">
+        </div>
+      </div>
+      <div class="control-group span4 attending">
+        <label>Will You Be Attending?</label>
+        <div class="controls">
+          <label class="checkbox inline">
+            <input type="checkbox"> Yes
+          </label>
+          <label class="checkbox inline">
+            <input type="checkbox"> No
+          </label>
+        </div>
+      </div>
+    </div>
+    <a href="#" id="add-new-rsvp">+ RSVP for another person in your party</a>
   </div>
   <div class="modal-footer">
-    <button>RSVP</button>
+    <button class="cpt-button style-primary">RSVP</button>
   </div>
 </div>

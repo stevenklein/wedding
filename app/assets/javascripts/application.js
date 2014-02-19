@@ -72,10 +72,15 @@ $(function() { // nav scrolls
   });
 });
 
-$(function() { // rsvp button
-  $('#rsvp-button').on('click', function() {
-    $('#rsvp-dropdown').addClass('open')
-    return false;
-  })
 
-});
+
+$(function() { // add a new row in the rsvp modal
+  var newRSVP = function() {
+    $('#new-rsvp-template').clone().insertBefore('#add-new-rsvp').removeAttr('id').css('display', 'block');
+  }
+
+  $('#add-new-rsvp').on('click', function() {
+    newRSVP();
+    return false;
+  });
+})
