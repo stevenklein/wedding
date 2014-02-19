@@ -16,28 +16,47 @@
         @include opacity(1);
       }
       &.img-1 {
-        background-image: image-url('pic-1-dark.png');
+        background-image: image-url('pic-1.jpg');
       }
       &.img-2 {
-        background-image: image-url('pic-2-dark.png');
+        background-image: image-url('pic-2.jpg');
       }
       &.img-3 {
-        background-image: image-url('pic-3-dark.png');
+        background-image: image-url('pic-3.jpg');
       }
       &.img-4 {
-        background-image: image-url('pic-4-dark.png');
+        background-image: image-url('pic-4.jpg');
       }
       &.img-5 {
-        background-image: image-url('pic-5-dark.png');
+        background-image: image-url('pic-5.jpg');
       }
       &.img-6 {
-        background-image: image-url('pic-6-dark.png');
+        background-image: image-url('pic-6.jpg');
       }
       &.img-7 {
-        background-image: image-url('pic-7-dark.png');
+        background-image: image-url('pic-7.jpg');
       }
       &.img-8 {
-        background-image: image-url('pic-8-dark.png');
+        background-image: image-url('pic-8.jpg');
+      }
+      &.img-9 {
+        background-image: image-url('pic-9.jpg');
+      }
+      &.img-10 {
+        background-image: image-url('pic-10.jpg');
+      }
+      &.img-11 {
+        background-image: image-url('pic-11.jpg');
+      }
+      &.img-12 {
+        background-image: image-url('pic-12.jpg');
+      }
+      &.img-13 {
+        background-image: image-url('pic-13.jpg');
+        background-position: center bottom;
+      }
+      &.img-14 {
+        background-image: image-url('pic-14.jpg');
       }
     }
     .container {

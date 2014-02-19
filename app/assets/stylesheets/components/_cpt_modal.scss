@@ -1,7 +1,7 @@
 $modal-max-width:560px;
 $modal-large-max-width:760px;
 $modal-max-height:380px;
-$modal-large-max-height:500px;
+$modal-large-max-height:420px;
 $modal-media-query-width: $modal-max-width + 20px;
 $modal-large-media-query-width: $modal-large-max-width + 20px;
 $modal-body-spacing: 5%;
@@ -40,6 +40,9 @@ $modal-body-spacing: 5%;
     @include removeChildMB();
     padding:($modal-body-spacing / 2) $modal-body-spacing;
     border-bottom: 1px solid #e0e0e0;
+    h3 {
+      display:inline-block;
+    }
     .close {
       @include opacity(.2);
       margin-top: 2px;
@@ -120,7 +123,7 @@ $modal-body-spacing: 5%;
   }
 
   &.size-large {
-    margin:-393px 0 0 -380px;
+    margin:-353px 0 0 -380px;
     max-width:$modal-large-max-width;
     .modal-body {
       max-height:$modal-large-max-height;

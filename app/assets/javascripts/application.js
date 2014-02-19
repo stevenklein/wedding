@@ -29,7 +29,7 @@ $(function() { // rotate between heros
   var flag = 0;
 
   var getThenChangeFlag = function() {
-    if (flag == 7) {
+    if (flag == 13) {
       flag = 0;
       return 0;
     }
