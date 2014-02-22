@@ -1,0 +1,11 @@
+<div class="layout-content">
+  <div class="container">
+    <% @rsvps.each do |rsvp| %>
+      Rsvp - <%= rsvp.id %><br>
+      <% rsvp.attendees.each do |a| %>
+        <%= a.first_name %> - <%= a.last_name %> - <%= a.attending %> <br>
+      <% end %>
+      <hr style="height:1px;background;color:black;margin:3rem 0">
+    <% end %>
+  </div>
+</div>

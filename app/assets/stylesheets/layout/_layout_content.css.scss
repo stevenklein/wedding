@@ -1,5 +1,25 @@
+.modal-rsvp {
+  .rsvp-row {
+    position:relative;
+    &:hover .delete {
+      @include opacity(1);
+    }
+    .delete {
+      @include opacity(0);
+      @include transition(opacity .15s ease-in-out);
+      position:absolute;
+      height:16px;
+      width:16px;
+      left:0px;
+      top:39px;
+      cursor:pointer;
+
+    }
+  }
+}
+
 .layout-content {
-  padding-top:71px;
+  padding-top:104px;
   .hero {
     position:relative;
     .img {

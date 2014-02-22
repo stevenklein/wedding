@@ -11,7 +11,7 @@
 $(function() { // makes sure hero is correct height
   var heroHeight = function() {
 
-    var windowHeight = window.innerHeight - 71
+    var windowHeight = window.innerHeight - 104
       , textHeight = parseInt($('.hero').find('.text').css('height'));
 
     $('.hero').css({
@@ -75,12 +75,46 @@ $(function() { // nav scrolls
 
 
 $(function() { // add a new row in the rsvp modal
+  var counter = 1;
+
+  $.fn.conditionFields = function() {
+    this.find('input').each(function() {
+      $(this).attr('id', $(this).attr('id').replace('***', counter));
+      $(this).attr('name', $(this).attr('name').replace('***', counter));
+    });
+
+    counter++;
+
+    return this;
+  };
+
+
   var newRSVP = function() {
-    $('#new-rsvp-template').clone().insertBefore('#add-new-rsvp').removeAttr('id').css('display', 'block');
+    $('#new-rsvp-template').clone().insertBefore('#add-new-rsvp').removeAttr('id').css('display', 'block').conditionFields();
   }
 
   $('#add-new-rsvp').on('click', function() {
     newRSVP();
     return false;
   });
+})
+
+
+$(function() { // delete button
+  $('.modal-body').on('click', '.delete', function() {
+    $(this).parent().remove();
+  });
+});
+
+
+
+$(function() {
+  $('#submit-button').on('click', function(e) {
+    e.preventDefault();
+
+    $('#new-rsvp-template').remove()
+    setTimeout(function() {
+      $('#new_rsvp').submit();
+    }, 150);
+  })
 })

@@ -1,0 +1,44 @@
+<div class="modal hide fade size-large modal-rsvp" id="modal-rsvp" style="display: none">
+  <%= form_for @rsvp do |f| %>
+    <%= render 'error_messages', object: f.object %>
+    <div class="modal-header">
+      <a href="#" data-dismiss="modal" class="close">×</a>
+      <h3>RSVP To Our Wedding</h3>
+    </div>
+    <div class="modal-body">
+      <%= f.fields_for :attendees do |builder| %>
+        <%= render partial: 'attendee_fields', :locals => { :f => builder } %>
+      <% end %>
+      <div class="row rsvp-row" id="new-rsvp-template" style="display:none">
+        <%= image_tag 'delete.png', class: 'delete' %>
+        <div class="control-group span4">
+          <label for="rsvp_attendees_attributes_***_first_name">First name</label>
+          <div class="controls">
+            <input class="full-width" id="rsvp_attendees_attributes_***_first_name" name="rsvp[attendees_attributes][***][first_name]" type="text">
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label for="rsvp_attendees_attributes_***_last_name">Last name</label>
+          <div class="controls">
+            <input class="full-width" id="rsvp_attendees_attributes_***_last_name" name="rsvp[attendees_attributes][***][last_name]" type="text">
+          </div>
+        </div>
+        <div class="control-group span4 attending">
+          <label>Will You Be Attending?</label>
+          <div class="controls">
+            <label class="radio inline">
+              <input id="rsvp_attendees_attributes_***_attending_true" name="rsvp[attendees_attributes][***][attending]" type="radio" value="true"> Yes
+            </label>
+            <label class="radio inline">
+              <input id="rsvp_attendees_attributes_***_attending_false" name="rsvp[attendees_attributes][***][attending]" type="radio" value="false"> No
+            </label>
+          </div>
+        </div>
+      </div>
+      <a href="#" id="add-new-rsvp">+ RSVP for another person in your party</a>
+    </div>
+    <div class="modal-footer">
+      <button id="submit-button" class="cpt-button style-primary">RSVP</button>
+    </div>
+  <% end %>
+</div>

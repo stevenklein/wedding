@@ -1,0 +1,26 @@
+<div class="row rsvp-row">
+  <%= image_tag 'delete.png', class: 'delete' %>
+  <div class="control-group span4">
+    <%= f.label :first_name %>
+    <div class="controls">
+      <%= f.text_field :first_name , class: 'full-width' %>
+    </div>
+  </div>
+  <div class="control-group span4">
+    <%= f.label :last_name %>
+    <div class="controls">
+      <%= f.text_field :last_name , class: 'full-width' %>
+    </div>
+  </div>
+  <div class="control-group span4 attending">
+    <label>Will You Be Attending?</label>
+    <div class="controls">
+      <label class="radio inline">
+        <%= f.radio_button :attending, true %> Yes
+      </label>
+      <label class="radio inline">
+        <%= f.radio_button :attending, false %> No
+      </label>
+    </div>
+  </div>
+</div>
