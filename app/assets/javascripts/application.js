@@ -109,14 +109,34 @@ $(function() { // delete button to remove attendee rows
 
 
 $(function() { // form behavior after submit button
-  $button = $('#submit-button');
+  var $button = $('#submit-button')
+    , $body = $('.modal-body');
 
+    
   $button.tooltip({trigger: 'manual'});
+
+  var ensureFullData = function() {
+    var flag = true;
+    $body.find('.rsvp-row').not('#new-rsvp-template').each(function() {
+      if ($(this).find('.span4').eq(0).find('input[type="text"]').val().trim() == '') {
+        flag = false;
+      }
+      if ($(this).find('.span4').eq(1).find('input[type="text"]').val().trim() == '') {
+        flag = false;
+      }
+      if (!$(this).find('.span4').eq(2).find('input[type="radio"]').filter(':checked').length) {
+        flag = false;
+      }
+    });
+    return flag;
+  }
+
+  //setInterval(ensureFullData, 5000);
 
   $button.on('click', function(e) {
     e.preventDefault();
 
-    if (true) {
+    if (!ensureFullData()) {
       $button.tooltip('show');
       setTimeout(function() {
         $button.tooltip('hide');
