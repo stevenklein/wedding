@@ -150,3 +150,14 @@ $(function() { // form behavior after submit button
     }
   });
 })
+
+
+
+
+$(function() { // success message
+  $('.success-flash').addClass('in');
+
+  setTimeout(function() {
+    $('.success-flash').removeClass('in');    
+  }, 10000);
+});

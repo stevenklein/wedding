@@ -3,7 +3,7 @@ class RsvpsController < ApplicationController
   def create
     @rsvp = Rsvp.new(rsvp_params)
     if @rsvp.save
-      flash[:notice] = "Successfully created Rsvp."
+      flash[:notice] = "Successfully RSVP'd for #{ @rsvp.attendees.count } people."
       redirect_to root_path
     else
       render :action => 'front_facing#index'

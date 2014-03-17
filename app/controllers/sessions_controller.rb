@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
 
- def create
-  render 'new'
+  include SessionsHelper
+
+  def create
+    render 'new'
   end
 
   def create

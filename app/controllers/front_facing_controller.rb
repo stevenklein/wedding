@@ -7,5 +7,6 @@ class FrontFacingController < ActionController::Base
 
   def admin
     @rsvps = Rsvp.all
+    redirect_to root_path unless signed_in?
   end
 end
