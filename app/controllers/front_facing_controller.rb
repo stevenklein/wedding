@@ -1,5 +1,8 @@
 class FrontFacingController < ActionController::Base
   layout 'application'
+
+  include SessionsHelper
+  
   def index
     @rsvp = Rsvp.new
     @rsvp.attendees.build
