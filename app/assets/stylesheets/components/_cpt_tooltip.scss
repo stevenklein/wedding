@@ -1,0 +1,103 @@
+[data-js-hook="tooltip"] {
+  cursor:default;
+}
+
+.tooltip-base {
+  @include border-radius(99px);
+  color:#666;
+  cursor:default;
+  display: inline-block;
+  border-width: 1px;
+  border-style:solid;
+  border-color:#e0e0e0;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  font-size: .75rem;
+  line-height: 18px;
+  margin-left: 5px;
+  position: relative;
+  top: -1px;
+  @media screen and (max-width: 650px) {
+    font-size:0.6875rem;
+    height:16px;
+    width:16px;
+    line-height:16px;
+  }
+  &:hover {
+    color:#666;
+  }
+}
+
+.tooltip {
+  @include opacity(0);
+  @include font-size(.75);
+  @include transition(opacity .3s ease-in-out);
+  position: absolute;
+  z-index: 1020;
+  display: block;
+  visibility: visible;
+  padding:5px;
+  &.in {
+    @include opacity(1);
+  }
+  &.top {
+    margin-top: -2px;
+    .tooltip-arrow {
+      bottom: 0;
+      left: 50%;
+      margin-left: -5px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #000000;
+    }
+  }
+  &.right {
+    margin-left: 2px;
+    .tooltip-arrow {
+      top: 50%;
+      left: 0;
+      margin-top: -5px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid #000000;
+    }
+  }
+  &.bottom {
+    margin-top: 2px;
+    .tooltip-arrow {
+      top: 0;
+      left: 50%;
+      margin-left: -5px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #000000;
+    }
+  }
+  &.left {
+    margin-left: -2px;
+    .tooltip-arrow {
+      top: 50%;
+      right: 0;
+      margin-top: -5px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #000000;
+    }
+  }
+  .tooltip-inner {
+    @include border-radius(.25rem);
+    max-width: 240px;
+    padding:.6rem;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0,0,0,.85);
+  }
+  .tooltip-arrow {
+    @include opacity(.85);
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}

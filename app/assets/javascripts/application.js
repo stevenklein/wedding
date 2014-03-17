@@ -100,7 +100,7 @@ $(function() { // add a new row in the rsvp modal
 })
 
 
-$(function() { // delete button
+$(function() { // delete button to remove attendee rows
   $('.modal-body').on('click', '.delete', function() {
     $(this).parent().remove();
   });
@@ -108,13 +108,25 @@ $(function() { // delete button
 
 
 
-$(function() {
-  $('#submit-button').on('click', function(e) {
+$(function() { // form behavior after submit button
+  $button = $('#submit-button');
+
+  $button.tooltip({trigger: 'manual'});
+
+  $button.on('click', function(e) {
     e.preventDefault();
 
-    $('#new-rsvp-template').remove()
-    setTimeout(function() {
-      $('#new_rsvp').submit();
-    }, 150);
-  })
+    if (true) {
+      $button.tooltip('show');
+      setTimeout(function() {
+        $button.tooltip('hide');
+      }, 3000);
+    }
+    else {
+      $('#new-rsvp-template').remove()
+      setTimeout(function() {
+        $('#new_rsvp').submit();
+      }, 150);
+    }
+  });
 })

@@ -136,8 +136,34 @@
     &.champagne {
       background-color:$champagne;
     }
-    &.our-story {
-      
+    &.the-big-day {
+      position:relative;
+      overflow:hidden;
+      .container {
+        position:relative;
+        z-index:10;
+      }
+      .map-container {
+        z-index:9;
+        position:absolute;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        .black-container {
+          background-color:rgba(240,240,233,.8);
+          position:absolute;
+          top:0px;
+          left:0px;
+          right:0px;
+          bottom:0px;
+        }
+        iframe {
+          position:relative;
+          top:-463px;
+          left:-75%;
+        }
+      }
     }
     &.wedding-party {
       .party-member {
