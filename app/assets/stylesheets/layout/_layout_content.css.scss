@@ -51,6 +51,7 @@
       @include transition(opacity .5s ease-in-out);
       position:absolute;
       background-size:cover;
+      background-position:center top;
       z-index:10;
       top:0px;
       left:0px;
