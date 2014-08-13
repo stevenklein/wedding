@@ -111,7 +111,7 @@
         @include opacity(0);
         @include transition(all 1s ease-in-out);
         font-family:$font-stack-b;
-        font-size:4rem;
+        font-size:3.65rem;
         line-height:5.5rem;
         color:#fff;
         position:relative;
@@ -206,7 +206,7 @@
         .description {
           color:$grey-text;
           text-align:justify;
-          max-width:85%;
+          max-width:90%;
           margin:0 auto;
         }
       }
